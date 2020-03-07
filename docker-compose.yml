@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  database:
+    image: postgres:9.6
+    restart: always
+    environment:
+      POSTGRES_DB: hospitaldb
+      POSTGRES_USER: usr_hos
+      POSTGRES_PASSWORD: usr_hos_pass
+    container_name: 'hospital_db_pg_96'
+    ports:
+      - 5432:5432
