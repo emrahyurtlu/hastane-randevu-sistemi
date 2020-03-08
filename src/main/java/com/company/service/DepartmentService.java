@@ -4,6 +4,7 @@ import com.company.entity.Department;
 import com.company.repository.DepartmentRepo;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -21,7 +22,9 @@ public class DepartmentService implements BaseService<Department> {
 
     @Override
     public List<Department> getList() {
-        return (List<Department>) departmentRepo.findAll();
+        var departments = new ArrayList<Department>();
+        departmentRepo.findAll().forEach(departments::add);
+        return departments;
     }
 
     @Override
@@ -36,6 +39,6 @@ public class DepartmentService implements BaseService<Department> {
 
     @Override
     public void delete(Integer id) {
-        departmentRepo.delete(get(id));
+        departmentRepo.deleteById(id);
     }
 }
