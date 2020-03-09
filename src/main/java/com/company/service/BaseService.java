@@ -8,9 +8,7 @@ public interface BaseService<T> {
 
     List<T> getList();
 
-    T insert(T entity);
-
-    T update(T entity);
+    T save(T entity);
 
     void delete(Integer id);
 }

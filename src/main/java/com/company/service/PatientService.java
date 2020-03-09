@@ -28,12 +28,7 @@ public class PatientService implements BaseService<Patient> {
     }
 
     @Override
-    public Patient insert(Patient entity) {
-        return patientRepo.save(entity);
-    }
-
-    @Override
-    public Patient update(Patient entity) {
+    public Patient save(Patient entity) {
         return patientRepo.save(entity);
     }
 

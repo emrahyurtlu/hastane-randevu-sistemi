@@ -28,12 +28,7 @@ public class HospitalService implements BaseService<Hospital> {
     }
 
     @Override
-    public Hospital insert(Hospital entity) {
-        return hospitalRepo.save(entity);
-    }
-
-    @Override
-    public Hospital update(Hospital entity) {
+    public Hospital save(Hospital entity) {
         return hospitalRepo.save(entity);
     }
 

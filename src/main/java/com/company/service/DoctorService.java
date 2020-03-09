@@ -29,12 +29,7 @@ public class DoctorService implements BaseService<Doctor> {
     }
 
     @Override
-    public Doctor insert(Doctor entity) {
-        return doctorRepo.save(entity);
-    }
-
-    @Override
-    public Doctor update(Doctor entity) {
+    public Doctor save(Doctor entity) {
         return doctorRepo.save(entity);
     }
 

@@ -28,12 +28,7 @@ public class TimetableService implements BaseService<Timetable> {
     }
 
     @Override
-    public Timetable insert(Timetable entity) {
-        return timetableRepo.save(entity);
-    }
-
-    @Override
-    public Timetable update(Timetable entity) {
+    public Timetable save(Timetable entity) {
         return timetableRepo.save(entity);
     }
 

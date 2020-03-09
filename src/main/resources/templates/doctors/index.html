@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="tr" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Doctors</title>
+</head>
+<body>
+<h1>Merhaba, burası doktorlar sayfasıdır.</h1>
+<p>
+    <a th:href="@{/doctors/add}">+ Yeni ekle</a>
+</p>
+
+<table>
+    <thead>
+    <th>Sicil No</th>
+    <th>Ad</th>
+    <th>Soyad</th>
+    <th>Güncelle</th>
+    <th>Sil</th>
+    </thead>
+    <tbody>
+    <tr th:each="doctor : ${doctors}" th:unless="${doctors.isEmpty()}">
+        <td th:text="${doctor.regNum}"></td>
+        <td th:text="${doctor.name}"></td>
+        <td th:text="${doctor.surname}"></td>
+        <td>
+            <a th:href="@{|/doctors/show/${doctor.doctorId}|}">İncele</a>
+        </td>
+        <td>
+            <a th:href="@{|/doctors/edit/${doctor.doctorId}|}">Güncelle</a>
+        </td>
+        <td>
+            <a th:href="@{|/doctors/remove/${doctor.doctorId}|}">Sil</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

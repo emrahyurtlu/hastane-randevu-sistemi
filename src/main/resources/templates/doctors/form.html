@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Doktor Ekle/Güncelle</title>
+</head>
+<body>
+<h1>Doktor Ekle/Güncelle</h1>
+
+<form action="#" method="post" th:action="@{/doctors/save}" th:object="${doctor}">
+    <input id="doctorId" th:field="*{doctorId}" type="hidden"/>
+    <div>
+        <p><label for="name">Doktor Adı</label></p>
+        <p>
+            <input id="name" th:field="*{name}" type="text"/>
+        </p>
+
+        <p><label for="surname">Doktor Soyadı</label></p>
+        <p>
+            <input id="surname" th:field="*{surname}" type="text"/>
+        </p>
+    </div>
+    <div>
+        <p><label for="regNum">Sicil No</label></p>
+        <p>
+            <input id="regNum" th:field="*{regNum}" type="text"/>
+        </p>
+    </div>
+    <div>
+        <input type="submit" value="Kaydet"/>
+    </div>
+</form>
+</body>
+</html>

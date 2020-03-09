@@ -28,12 +28,7 @@ public class DepartmentService implements BaseService<Department> {
     }
 
     @Override
-    public Department insert(Department entity) {
-        return departmentRepo.save(entity);
-    }
-
-    @Override
-    public Department update(Department entity) {
+    public Department save(Department entity) {
         return departmentRepo.save(entity);
     }
 
