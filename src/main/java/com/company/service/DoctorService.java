@@ -23,9 +23,7 @@ public class DoctorService implements BaseService<Doctor> {
 
     @Override
     public List<Doctor> getList() {
-        List<Doctor> doctors = new ArrayList<Doctor>();
-        doctorRepo.findAll().forEach(doctors::add);
-        return doctors;
+        return new ArrayList<>(doctorRepo.getAllByOrderByDoctorIdDesc());
     }
 
     @Override

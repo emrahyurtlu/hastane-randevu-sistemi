@@ -20,14 +20,18 @@ public class Doctor {
     @Column(name = "DOCTOR_REGISTRATION_NUMBER")
     private String regNum;
 
+    @Column(name = "DOCTOR_IMAGE_LINK")
+    private String imageLink;
+
     public Doctor() {
     }
 
-    public Doctor(Integer doctorId, String name, String surname, String regNum) {
+    public Doctor(Integer doctorId, String name, String surname, String regNum, String imageLink) {
         this.doctorId = doctorId;
         this.name = name;
         this.surname = surname;
         this.regNum = regNum;
+        this.imageLink = imageLink;
     }
 
     public Integer getDoctorId() {
@@ -62,6 +66,14 @@ public class Doctor {
         this.regNum = regNum;
     }
 
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
+    }
+
     @Override
     public String toString() {
         return "Doctor{" +
@@ -69,6 +81,7 @@ public class Doctor {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", regNum='" + regNum + '\'' +
+                ", imageLink='" + imageLink + '\'' +
                 '}';
     }
 }

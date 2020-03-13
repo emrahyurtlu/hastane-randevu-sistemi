@@ -7,23 +7,29 @@
 <body>
 <h1>Doktor Ekle/Güncelle</h1>
 
-<form action="#" method="post" th:action="@{/doctors/save}" th:object="${doctor}">
-    <input id="doctorId" th:field="*{doctorId}" type="hidden"/>
+<form action="#" enctype="multipart/form-data" method="post" th:action="@{/doctors/save}" th:object="${doctorComplex}">
+    <input id="doctorId" th:field="*{doctor.doctorId}" type="hidden"/>
     <div>
-        <p><label for="name">Doktor Adı</label></p>
+        <p><label for="name">Adı</label></p>
         <p>
-            <input id="name" th:field="*{name}" type="text"/>
+            <input id="name" th:field="*{doctor.name}" type="text"/>
         </p>
 
-        <p><label for="surname">Doktor Soyadı</label></p>
+        <p><label for="surname">Soyadı</label></p>
         <p>
-            <input id="surname" th:field="*{surname}" type="text"/>
+            <input id="surname" th:field="*{doctor.surname}" type="text"/>
         </p>
     </div>
     <div>
         <p><label for="regNum">Sicil No</label></p>
         <p>
-            <input id="regNum" th:field="*{regNum}" type="text"/>
+            <input id="regNum" th:field="*{doctor.regNum}" type="text"/>
+        </p>
+    </div>
+    <div>
+        <p><label for="file">Fotoğraf Yükle</label></p>
+        <p>
+            <input id="file" th:field="*{file}" type="file"/>
         </p>
     </div>
     <div>

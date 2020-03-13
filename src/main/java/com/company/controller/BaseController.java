@@ -1,6 +1,7 @@
 package com.company.controller;
 
 import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * Bu interface sayesinde controller'ların
@@ -30,7 +31,7 @@ public interface BaseController<T> {
      * @param entity Entity nesnesi alır.
      * @return show.html
      */
-    String save(Model model, T entity);
+    String save(Model model, T entity, MultipartFile file);
 
     /**
      * İstenilen nesnenin detaylarını gösterir.
@@ -46,7 +47,7 @@ public interface BaseController<T> {
      * @param entityId Entity id değerini alır.
      * @return form.html
      */
-    String edit(Model model, Integer entityId);
+    String edit(Model model, Integer entityId, MultipartFile file);
 
     /**
      * Id'si gönderilen nesneyi veri tabanından siler.
