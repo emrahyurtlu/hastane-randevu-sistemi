@@ -13,7 +13,7 @@ import java.util.UUID;
  *
  * @param <T> Entity nesnesi alır.
  */
-public abstract class AbstractBaseController<T> {
+public abstract class AbstractBaseController<T> implements BaseController<T> {
 
 
     /**
@@ -21,7 +21,7 @@ public abstract class AbstractBaseController<T> {
      *
      * @return index.html döndürür.
      */
-    String index(Model model) {
+    public String index(Model model) {
         return null;
     }
 
@@ -30,7 +30,7 @@ public abstract class AbstractBaseController<T> {
      *
      * @return form.html
      */
-    String add(Model model) {
+    public String add(Model model) {
         return null;
     }
 
@@ -51,7 +51,7 @@ public abstract class AbstractBaseController<T> {
      * @param entityId Entity id değerini alır.
      * @return show.html
      */
-    String show(Model model, Integer entityId) {
+    public String show(Model model, Integer entityId) {
         return null;
     }
 
@@ -71,7 +71,7 @@ public abstract class AbstractBaseController<T> {
      * @param entityId Entity id değerini alır.
      * @return index.html döndürür.
      */
-    String delete(Integer entityId) {
+    public String delete(Integer entityId) {
         return null;
     }
 
